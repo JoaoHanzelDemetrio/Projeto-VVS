@@ -89,7 +89,7 @@ public class BatalhaTest {
 
 ---
 
-### **3.3 RodadaTest (NOVO)**
+### **3.3 RodadaTest**
 **Objetivo**: Verificar o processamento de rodadas com múltiplas startups.
 
 ```java
