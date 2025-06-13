@@ -1,14 +1,16 @@
 # **Plano de Teste - StartUp Rush - DELL IT Academy 22**
 
 **Versão:** 1.0  
-**Data:** [Data atual]  
-**Autor:** [Seu Nome]  
-**Revisado por:** [Nome do Revisor]
+**Data:** 13/06/2025  
+**Autor:** João Fernando Hanzel Demetrio  
+**Revisado por:** João Fernando Hanzel Demetrio
 
 ---
 
 ## **1. Objetivo**
-Garantir a qualidade das funcionalidades principais do sistema através de testes automatizados, cobrindo:
+Garantir a qualidade das funcionalidades principais do sistema através de uma análise estática e testes automatizados, cobrindo:
+- Code Smells
+- Padrões
 - Avaliação individual de startups (`avaliaEquipe`)
 - Batalhas entre startups (`batalha`)
 - Rodadas de competição (`rodada`)
@@ -137,8 +139,8 @@ public class RodadaTest {
 
 | Nome          | Papel | Assinatura | Data  |
 |---------------|-------|------------|-------|
-| João Demetrio | Garantia de Qualidade | João FHD   | 03/06 |
-| João Demetrio   | Desenvolvimento | João FHD   | 03/06 |
+| João Demetrio | Garantia de Qualidade | João FHD   | 13/06 |
+| João Demetrio   | Desenvolvimento | João FHD   | 13/06 |
 
 
 
