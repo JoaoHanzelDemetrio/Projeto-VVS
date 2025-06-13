@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<ruleset name="Custom Rules"
+         xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 https://pmd.sourceforge.io/ruleset_2_0_0.xsd">
+
+    <description>
+        Regras customizadas para o projeto StartUp Rush Dell IT Academy 22.
+        Foco em: qualidade de código, prevenção de bugs e boas práticas em testes.
+    </description>
+
+    <!-- ================================== -->
+    <!-- 1. Regras Essenciais para Qualidade -->
+    <!-- ================================== -->
+    <rule ref="category/java/bestpractices.xml">
+        <!-- Evitar código duplicado -->
+        <exclude name="DuplicateCode"/> <!-- Verificado pelo SonarQube -->
+
+        <!-- Boas práticas em métodos -->
+        <include name="MethodArgumentCouldBeFinal"/>
+        <include name="AvoidReassigningParameters"/>
+    </rule>
+
+    <rule ref="category/java/codestyle.xml">
+        <!-- Nomenclatura -->
+        <include name="MethodNamingConventions"/>
+        <include name="ClassNamingConventions"/>
+
+        <!-- Tamanho de métodos/classes -->
+        <include name="ExcessiveMethodLength">
+            <property name="minimum" value="30"/> <!-- Máximo 30 linhas -->
+        </include>
+        <include name="ExcessiveClassLength">
+            <property name="minimum" value="500"/> <!-- Máximo 500 linhas -->
+        </include>
+    </rule>
+
+    <!-- ============================== -->
+    <!-- 2. Regras para Prevenção de Bugs -->
+    <!-- ============================== -->
+    <rule ref="category/java/errorprone.xml">
+        <!-- Controle de fluxo -->
+        <include name="EmptyCatchBlock"/>
+        <include name="AvoidBranchingStatementAsLastInLoop"/>
+
+        <!-- Null safety -->
+        <include name="NullAssignment"/>
+        <include name="AvoidDuplicateLiterals"/>
+    </rule>
+
+    <!-- ============================= -->
+    <!-- 3. Regras Específicas para Testes -->
+    <!-- ============================= -->
+    <rule ref="category/java/bestpractices.xml/JUnitTestContainsTooManyAsserts">
+        <properties>
+            <property name="maximumAsserts" value="5"/> <!-- Máximo 5 asserts por teste -->
+        </properties>
+    </rule>
+
+    <rule ref="category/java/bestpractices.xml/JUnitAssertionsShouldIncludeMessage">
+        <!-- Garante mensagens descritivas em asserts -->
+        <priority>3</priority>
+    </rule>
+
+    <rule ref="category/java/bestpractices.xml/TestClassWithoutTestCases">
+        <!-- Evita classes de teste vazias -->
+    </rule>
+
+    <!-- ============================= -->
+    <!-- 4. Regras Customizadas Adicionais -->
+    <!-- ============================= -->
+    <rule ref="category/java/design.xml/CyclomaticComplexity">
+        <properties>
+            <property name="reportLevel" value="10"/> <!-- Alerta para complexidade > 10 -->
+        </properties>
+    </rule>
+
+    <rule ref="category/java/codestyle.xml/ShortVariable">
+        <properties>
+            <property name="minimum" value="3"/> <!-- Nome de variáveis com mínimo 3 chars -->
+        </properties>
+    </rule>
+</ruleset>
